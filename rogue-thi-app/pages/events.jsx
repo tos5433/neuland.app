@@ -21,6 +21,7 @@ import AppNavbar from '../components/page/AppNavbar'
 import AppTabbar from '../components/page/AppTabbar'
 
 import {
+  formatFriendlyDateRange,
   formatFriendlyDateTimeRange,
   formatFriendlyRelativeTime,
   getLocalizedWeekday,
@@ -156,8 +157,14 @@ export default function Events({ initialCampusEvents, sportsEvents }) {
         </Modal.Header>
         <Modal.Body>
           <strong>{t('events.events.modal.details.time')}</strong>
-          <p>{focusedEvent && focusedEvent.startDateTime}</p>
-          <p>{focusedEvent && focusedEvent.endDateTime}</p>
+          <p>
+            {focusedEvent &&
+              formatFriendlyDateTimeRange(
+                new Date(focusedEvent.startDateTime),
+                new Date(focusedEvent.endDateTime)
+              )}
+          </p>
+
           <strong>{t('events.events.modal.details.description')}</strong>
           <p>{focusedEvent && focusedEvent.description}</p>
           <strong>{t('events.events.modal.details.location')}</strong>
