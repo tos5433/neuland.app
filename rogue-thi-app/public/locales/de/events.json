@@ -1,9 +1,25 @@
 {
   "events": {
-    "events": {
-      "tab": "Veranstaltungen",
-      "noEvents": "Es sind derzeit keine Veranstaltungstermine verfügbar."
+    "tab": "Veranstaltungen",
+    "noEvents": "Es sind derzeit keine Veranstaltungstermine verfügbar.",
+    "modal": {
+      "close": "Schließen",
+      "details": {
+        "header": "Details",
+        "description": "Beschreibung",
+        "location": "Ort",
+        "time": "Uhrzeit",
+        "weekday": "Wochentag"
+      },
+      "registration": {
+        "header": "Anmeldung",
+        "required": "Zwingend erforderlich",
+        "notRequired": "Spontane Teilnahme möglich",
+        "email": "E-Mail",
+        "invitationLink": "Einladungslink"
+      }
     },
+
     "sports": {
       "tab": "Sport",
       "noSports": "Aktuell ist kein Hochschulsportangebot verfügbar.",
