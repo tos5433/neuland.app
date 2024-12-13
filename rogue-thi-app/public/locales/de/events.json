@@ -1,22 +1,17 @@
 {
   "events": {
-    "tab": "Veranstaltungen",
-    "noEvents": "Es sind derzeit keine Veranstaltungstermine verfügbar.",
-    "modal": {
-      "close": "Schließen",
-      "details": {
-        "header": "Details",
-        "description": "Beschreibung",
-        "location": "Ort",
-        "time": "Uhrzeit",
-        "weekday": "Wochentag"
-      },
-      "registration": {
-        "header": "Anmeldung",
-        "required": "Zwingend erforderlich",
-        "notRequired": "Spontane Teilnahme möglich",
-        "email": "E-Mail",
-        "invitationLink": "Einladungslink"
+    "events": {
+      "tab": "Veranstaltungen",
+      "noEvents": "Es sind derzeit keine Veranstaltungstermine verfügbar.",
+      "modal": {
+        "close": "Schließen",
+        "details": {
+          "header": "Details",
+          "description": "Beschreibung",
+          "location": "Ort",
+          "time": "Uhrzeit",
+          "weekday": "Wochentag"
+        }
       }
     },
 

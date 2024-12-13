@@ -2,7 +2,17 @@
   "events": {
     "events": {
       "tab": "Events",
-      "noEvents": "There are currently no event dates available."
+      "noEvents": "There are currently no event dates available.",
+      "modal": {
+        "close": "Close",
+        "details": {
+          "header": "Details",
+          "description": "Description",
+          "location": "Location",
+          "time": "Time",
+          "weekday": "Weekday"
+        }
+      }
     },
     "sports": {
       "tab": "Sports",

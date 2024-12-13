@@ -84,6 +84,7 @@ export default function Events({ initialCampusEvents, sportsEvents }) {
     setFilterCampus(userCampus)
   }, [userCampus])
 
+  const [focusedEvent, setFocusedEvent] = useState(null)
   const [focusedSport, setFocusedSport] = useState(null)
 
   const campusLifeEvents = useMemo(() => {
@@ -124,6 +125,53 @@ export default function Events({ initialCampusEvents, sportsEvents }) {
   return (
     <AppContainer>
       <AppNavbar title={t('events.appbar.title')} />
+
+      {/* {
+    "host": {
+        "name": "Students' Life e.V.",
+        "website": "https://students-life.de/",
+        "instagram": "https://www.instagram.com/studentslife.thingolstadt/"
+    },
+    "titles": {
+        "de": "Semester Closing - Master Reset",
+        "en": "Semester Closing - Master Reset"
+    },
+    "location": "Sepparee & Lago Bar",
+    "startDateTime": "2025-02-01T21:00:00.000Z",
+    "endDateTime": "2025-02-02T04:00:00.000Z",
+    "description": null,
+    "begin": "2025-02-01T21:00:00.000Z",
+    "end": "2025-02-02T04:00:00.000Z"
+} */}
+
+      {/* EVENTS DETAILS MODAL */}
+      <Modal
+        show={!!focusedEvent}
+        onHide={() => setFocusedEvent(null)}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {focusedEvent && focusedEvent.titles[locale]}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <strong>{t('events.events.modal.details.time')}</strong>
+          <p>{focusedEvent && focusedEvent.startDateTime}</p>
+          <p>{focusedEvent && focusedEvent.endDateTime}</p>
+          <strong>{t('events.events.modal.details.description')}</strong>
+          <p>{focusedEvent && focusedEvent.description}</p>
+          <strong>{t('events.events.modal.details.location')}</strong>
+          <p> {focusedEvent && focusedEvent.location}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => setFocusedEvent(null)}
+          >
+            {t('events.events.modal.close')}
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       {/* SPORTS DETAILS MODAL */}
       <Modal
@@ -249,7 +297,9 @@ export default function Events({ initialCampusEvents, sportsEvents }) {
                     <ListGroup.Item
                       key={idx}
                       className={styles.item}
+                      onClick={() => setFocusedEvent(item)}
                     >
+                      {console.log(item)}
                       <div className={styles.left}>
                         {!item.url && item.titles[locale]}
                         {item.url && (
